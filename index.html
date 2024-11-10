@@ -3,10 +3,186 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta property="og:title" content="Harsh Chaturvedi | Portfolio">
+    <meta property="og:description" content="Welcome to the personal portfolio of Harsh Chaturvedi, a passionate developer.">
+    <meta property="og:image" content="https://www.example.com/path-to-image.jpg"> <!-- Replace with your image URL -->
+    <meta property="og:url" content="https://www.example.com"> <!-- Replace with your website URL -->
+    <meta name="author" content="Harsh Chaturvedi">
+    <title>Harsh Chaturvedi | Portfolio</title>
+    <style>
+        /* General reset and layout */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            padding-top: 50px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: #555;
+        }
+
+        section {
+            padding: 60px 20px;
+            margin-top: 60px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+            background: #333;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .about, .contact {
+            background: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .about h2, .contact h2 {
+            text-align: center;
+            padding: 20px 0;
+            background: #333;
+            color: white;
+        }
+
+        .about p, .contact p {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact form button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact form button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #333;
+            color: white;
+        }
+
+    </style>
 </head>
 <body>
-    <b>hello jay harsh</b>
-    
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="about.html">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <h1>Hi, I'm Harsh Chaturvedi</h1>
+        <p>A passionate Web Developer</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>
+            I am a dedicated web developer with a keen interest in building user-friendly and responsive websites.
+            With expertise in HTML, CSS, JavaScript, and other modern web technologies, I enjoy transforming ideas
+            into functional web applications. I am always learning and improving my skills to stay up-to-date with
+            the latest trends in web development.
+        </p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out to me if you have any questions or would like to collaborate on a project!</p>
+        <form id="contactForm">
+            <input type="text" id="name" placeholder="Your Name" required><br>
+            <input type="email" id="email" placeholder="Your Email" required><br>
+            <textarea id="message" rows="5" placeholder="Your Message" required></textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Harsh Chaturvedi. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript for form handling and smooth scrolling -->
+    <script>
+        // Smooth scroll for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            });
+        });
+
+        // Contact form submission handling (example only, replace with real server-side handling)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for reaching out! I will get back to you soon.');
+            this.reset();
+        });
+    </script>
+
 </body>
 </html>
